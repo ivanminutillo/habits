@@ -1,0 +1,29 @@
+.home_intro {
+  padding-left: 30px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 100%;
+  h1 {
+    @include text-title-regular($p100)
+    line-height: 40px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  p {
+    @include text-general($p100);
+    margin-bottom: 40px;
+  }
+}
+
+.actions_single, .actions_multi {
+  background: #f1f1f1;
+  border-radius: 3px;
+  height: 40px;
+  @include text-mini-black($p100);
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-right: 20px;
+  padding: 0 20px;
+  line-height: 40px;
+  display: inline-block;
+}

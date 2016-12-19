@@ -1,0 +1,219 @@
+.habits_game {
+  .game_link {
+    @include text-mini-black(#69a078);
+    text-transform: uppercase;
+    font-style: italic;
+    position: absolute;
+    left: 40px;
+    top: 20px;
+    &:before {
+      position: absolute;
+      content: "\e094";
+      font-family: 'uniquid' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+
+      /* Enable Ligatures ================ */
+      letter-spacing: 0;
+      -webkit-font-feature-settings: "liga";
+      -moz-font-feature-settings: "liga=1";
+      -moz-font-feature-settings: "liga";
+      -ms-font-feature-settings: "liga" 1;
+      font-feature-settings: "liga";
+      -webkit-font-variant-ligatures: discretionary-ligatures;
+      font-variant-ligatures: discretionary-ligatures;
+
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      left: -20px;
+      top: 2px;
+      font-size: 14px;
+    }
+  }
+  .game_explanation {
+    padding: 30px;
+    padding-bottom: 0;
+    padding-top: 50px;
+    .explanation_step {
+      @include text-general-black(#f1f1f1);
+      text-transform: uppercase;
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        bottom: -4px;
+        height: 2px;
+        left: 0;
+        background: #f1f1f1;
+      }
+    }
+    .explanation_title {
+      @include text-title-regular($p100)
+      line-height: 40px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      margin-top: 40px;
+    }
+    p {
+      @include text-general($p100);
+      margin-bottom: 40px;
+    }
+    button {
+      background: #f1f1f1;
+      border-radius: 3px;
+      height: 40px;
+      @include text-mini-black($p100);
+      text-decoration: none;
+      text-transform: uppercase;
+      margin-right: 20px;
+      padding: 0 20px;
+      line-height: 40px;
+      display: inline-block;
+    }
+  }
+  .game_play {
+    background-color: $p700;
+    height: 100vh;
+    margin-right: -10px;
+    position: relative;
+    .play_half {
+      position: absolute;
+      width: 50%;
+      height: 100vh;
+      h4 {
+        text-align: center;
+        @include text-general-black(#74ad83)
+        margin-top: 10px;
+        text-transform: uppercase;
+        position: relative;
+        &:after {
+          position: absolute;
+          content: "";
+          width: 40px;
+          left: 50%;
+          margin-left: -20px;
+          bottom: -5px;
+          background: #74ad83;
+          height: 2px;
+        }
+      }
+      .phase_line {
+        top: 60px;
+      }
+      &.left {
+        left: 0;
+      }
+      &.right {
+        right: 0;
+      }
+      .phase {
+        &.born {
+          top: 50px;
+        }
+      }
+    }
+    .play_add {
+      background: $p900;
+      border-radius: 3px;
+      height: 40px;
+      @include text-mini-black(#f1f1f1);
+      text-decoration: none;
+      text-transform: uppercase;
+      margin-right: 20px;
+      margin-top: 20px;
+      padding: 0 20px;
+      line-height: 40px;
+      display: inline-block;
+      float: right;
+    }
+    .phase {
+      background: #f1f1f1;
+      border-radius: 3px;
+      height: 40px;
+      @include text-mini-black($p100);
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 0 20px;
+      line-height: 40px;
+      display: block;
+      width: 200px;
+      margin: 0 auto;
+      position: absolute;
+      left: 50%;
+      margin-left: -100px;
+      text-align: center;
+      &:hover {
+        .icon-trash {
+          overflow: visible;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      input {
+        height: 40px;
+        background: transparent;
+        border: none;
+        width: 100%;
+        text-align: center;
+        @include text-general($p100)
+      }
+      &.born {
+        top: 20px;
+      }
+      &.die {
+        bottom: 20px;
+      }
+      .icon-trash {
+        position: absolute;
+        overflow: hidden;
+        visibility: hidden;
+        @include transition(.3s);
+        opacity: 0;
+        right: -20px;
+        top: 13px;
+        color: white;
+        font-size: 14px;
+      }
+    }
+    .phase_line {
+      position: absolute;
+      top: 30px;
+      bottom: 30px;
+      width: 4px;
+      background-color: #f1f1f1;
+      left: 50%;
+      margin-left: -2px;
+    }
+  }
+}
+
+
+.steps-component {
+  .steps-navigator {
+    display: none;
+  }
+  .steps-nav {
+    button {
+      background: #f1f1f1;
+      border-radius: 3px;
+      height: 40px;
+      @include text-mini-black($p100);
+      text-decoration: none;
+      text-transform: uppercase;
+      margin-right: 20px;
+      padding: 0 20px;
+      line-height: 40px;
+      display: inline-block;
+      margin-left: 30px;
+      &:disabled {
+        display: none;
+      }
+    }
+  }
+}

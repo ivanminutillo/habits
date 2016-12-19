@@ -1,0 +1,22 @@
+.header {
+
+  .header_right {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+    margin-right: 30px;
+    .right_item {
+      display: inline-block;
+      margin-right: 30px;
+      line-height: 30px;
+      a {
+        @include text-mini-black($p100);
+        text-transform: uppercase;
+      }
+      &:last-of-type {
+        margin-right: 0
+      }
+    }
+  }
+}

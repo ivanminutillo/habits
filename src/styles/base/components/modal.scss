@@ -1,0 +1,71 @@
+.modal {
+  position: fixed;
+  z-index: $zmax;
+  width: 50vw;
+  left: 50%;
+  top: 0%;
+  margin-left: -25vw;
+  margin-top: -25vh;
+  background-color: $lighter; 
+  padding: 40px;
+  color: $dark;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  @include transition(.3s);
+  &.active {
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
+  }
+  .modal_close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    @include transition(.2s);
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: $dark;
+      top: 19px;
+      left: 10px;
+      @include rotate(45deg);
+    }
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: $dark;
+      top: 19px;
+      left: 10px;
+      @include rotate(-45deg);
+    }
+    &:hover {
+      background-color: $light;
+    }
+  }
+  .modal_container {
+    legend {
+      color: $dark;
+      border-bottom-color: $dark;
+    }
+    .list-form .form_single label {
+      color: $dark;
+    }
+    .form_button {
+      margin-bottom: 0;
+      .button, button, input[type=submit] {
+        margin-bottom: 0;
+      }
+    }
+  } 
+}
